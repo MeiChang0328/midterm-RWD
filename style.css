@@ -31,20 +31,39 @@ button:active {
 }
 
 /*id名:image-container 底下的圖片排列2x4*/
-/*全版面不使用橫向卷軸*/
+/*使用flexbox語法*/
 #image-container{
-    display:grid;
-    grid-template-columns: repeat(4, 1fr);
-    /*圖片在隔線裡面置中*/
-    justify-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     align-items: center;
-    margin-top: 30px;
-
+    margin-top: 20px;
 }
 img{
-    width: 20vw;
-    height: auto;
-    margin: 10px 10px 10px 10px;
-
+    max-width: 23%;
     box-shadow: 8px 0px 8px rgba(0, 0, 0, 0.4);
+    margin: 10px 10px;
+}
+
+/*游標移至圖片上面會有手指符號*/
+img:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+    transition: transform 0.3s;
+    /*消除陰影*/
+    box-shadow: none;
+}
+/*小於750時排列呈現4x2*/
+@media (max-width: 750px) {
+    img{
+        max-width: 45%;
+    }
+
+}
+@media (max-width: 500px) {
+    img{
+        max-width: 90%;
+    }
+
+
 }
