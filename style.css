@@ -1,0 +1,50 @@
+/*button-container類別元素設置按鈕橫向排列*/
+*{
+    margin:0px;
+    padding:0px;
+    box-sizing: border-box;
+
+}
+.button-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+/*每個按鈕圓弧邊線、灰底*/
+button {
+  background-color: #f0f0f0;
+  border: 2px solid #ccc;
+  border-radius: 30px;
+  padding: 10px 20px;
+  margin: 0 10px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+/*    粗體字*/
+    font-weight: bold;
+    font-size: 16px;
+}
+/*點擊按鈕時，按鈕背景色轉為湖水綠*/
+button:active {
+    background-color: #20b2aa; /* 湖水綠 */
+    /*字體變成白色*/
+    color: white;
+}
+
+/*id名:image-container 底下的圖片排列2x4*/
+/*全版面不使用橫向卷軸*/
+#image-container{
+    display:grid;
+    grid-template-columns: repeat(4, 1fr);
+    /*圖片在隔線裡面置中*/
+    justify-items: center;
+    align-items: center;
+    margin-top: 30px;
+
+}
+img{
+    width: 20vw;
+    height: auto;
+    margin: 10px 10px 10px 10px;
+
+    box-shadow: 8px 0px 8px rgba(0, 0, 0, 0.4);
+}
